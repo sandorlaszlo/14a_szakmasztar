@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "14a_Szakmasztar",
-    "dateExported": "2024-02-16T12:02:19.006Z",
+    "dateExported": "2024-02-16T12:24:14.129Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -29,15 +29,38 @@
             "tests": []
         },
         {
+            "_id": "d38bc942-476f-4b9c-855d-adcc9957d0da",
+            "colId": "11917654-c06a-4656-bdb0-c08052b79933",
+            "containerId": "",
+            "name": "Search",
+            "url": "http://127.0.0.1:8000/api/competitors/12",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2024-02-16T12:23:50.546Z",
+            "modified": "2024-02-16T12:24:05.587Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
             "_id": "29b90242-c096-408e-92c3-a778257e6d6a",
             "colId": "11917654-c06a-4656-bdb0-c08052b79933",
             "containerId": "",
             "name": "Create",
-            "url": "http://127.0.0.1:8000/api/newcompetitor",
+            "url": "http://127.0.0.1:8000/api/competitors",
             "method": "POST",
             "sortNum": 20000,
             "created": "2024-02-16T11:54:56.191Z",
-            "modified": "2024-02-16T11:58:19.207Z",
+            "modified": "2024-02-16T12:15:09.207Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -61,11 +84,11 @@
             "colId": "11917654-c06a-4656-bdb0-c08052b79933",
             "containerId": "",
             "name": "Delete",
-            "url": "http://127.0.0.1:8000/api/competitor/10",
+            "url": "http://127.0.0.1:8000/api/competitors/10",
             "method": "DELETE",
             "sortNum": 30000,
             "created": "2024-02-16T12:01:31.742Z",
-            "modified": "2024-02-16T12:01:52.984Z",
+            "modified": "2024-02-16T12:19:15.427Z",
             "headers": [
                 {
                     "name": "Accept",
@@ -77,6 +100,34 @@
                 }
             ],
             "params": [],
+            "tests": []
+        },
+        {
+            "_id": "92a783f7-a2f2-4143-a5f8-3b447b2b2c79",
+            "colId": "11917654-c06a-4656-bdb0-c08052b79933",
+            "containerId": "",
+            "name": "Update",
+            "url": "http://127.0.0.1:8000/api/competitors/11",
+            "method": "PATCH",
+            "sortNum": 40000,
+            "created": "2024-02-16T12:22:18.971Z",
+            "modified": "2024-02-16T12:23:04.432Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"hostel\" : 1\n}\n",
+                "form": []
+            },
             "tests": []
         }
     ]

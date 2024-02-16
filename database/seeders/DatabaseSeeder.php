@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Competitor;
 use App\Models\Profession;
 use Illuminate\Database\Seeder;
 
@@ -26,5 +27,7 @@ class DatabaseSeeder extends Seeder
         Profession::create(["name" => "CAD-CAM informatikus"]);
         Profession::create(["name" => "Gépgyártástechnológiai technikus"]);
         Profession::create(["name" => ""]);
+
+        Competitor::factory(20)->create();
     }
 }

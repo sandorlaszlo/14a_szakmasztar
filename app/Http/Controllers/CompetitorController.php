@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreCompetitorRequest;
+use App\Http\Requests\UpdateCompetitorRequest;
+use App\Http\Resources\CompetitorResource;
 use App\Models\Competitor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -13,28 +16,19 @@ class CompetitorController extends Controller
      */
     public function index()
     {
-        // return Competitor::all();
-        return Competitor::with('profession')->get();
+        return CompetitorResource::collection(Competitor::all());
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreCompetitorRequest $request)
     {
-        $validator = Validator::make($request->all(), [
-            'professionId' =>'required',
-            'name' =>'required',
-            'hostel' =>'required',
-        ]);
-
-        if ($validator->fails()) {
-            return response()->json(['error' => 'Hiányos adatok.'], 400);
-        }
+        $request->validated();
 
         $competitor = Competitor::create($request->all());
 
-        return response()->json(['id' => $competitor->id], 201);
+        return response()->json(new CompetitorResource($competitor), 201);
     }
 
     /**
@@ -42,29 +36,28 @@ class CompetitorController extends Controller
      */
     public function show(Competitor $competitor)
     {
-        //
+        return new CompetitorResource($competitor);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Competitor $competitor)
+    public function update(UpdateCompetitorRequest $request, Competitor $competitor)
     {
-        //
+        $request->validated();
+
+        $competitor->update($request->only(['name', 'professionId','schoolName', 'birthDate', 'hostel', 'avatarUrl']));
+
+        return new CompetitorResource($competitor);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id)
+    public function destroy(Competitor $competitor)
     {
-        $competitor = Competitor::find($id);
-
-        if (is_null($competitor)) {
-            return response()->json(['error' => "A megadott azonosítóval versenyző nem létezik"], 404);
-        }
-
         $competitor->delete();
+
         return response()->noContent();
     }
 }

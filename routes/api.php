@@ -15,6 +15,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/competitors', [CompetitorController::class, 'index']);
-Route::delete('/competitor/{id}', [CompetitorController::class, 'destroy']);
-Route::post('/newcompetitor', [CompetitorController::class, 'store']);
+Route::apiResource('competitors', CompetitorController::class);
