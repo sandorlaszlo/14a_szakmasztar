@@ -1,0 +1,83 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "14a_Szakmasztar",
+    "dateExported": "2024-02-16T12:02:19.006Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "34354b02-9f02-414d-8f13-ab67b7ad9d9a",
+            "colId": "11917654-c06a-4656-bdb0-c08052b79933",
+            "containerId": "",
+            "name": "Get all",
+            "url": "http://127.0.0.1:8000/api/competitors",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-02-16T11:25:00.824Z",
+            "modified": "2024-02-16T11:25:51.511Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "29b90242-c096-408e-92c3-a778257e6d6a",
+            "colId": "11917654-c06a-4656-bdb0-c08052b79933",
+            "containerId": "",
+            "name": "Create",
+            "url": "http://127.0.0.1:8000/api/newcompetitor",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-02-16T11:54:56.191Z",
+            "modified": "2024-02-16T11:58:19.207Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"professionId\": 1,\n  \"schoolName\": \"GYSZC Jedlik Ányos Gépipari és Informatikai Technikum és Kollégium\",\n\t\"name\": \"Marton Zoltán\",\n\t\"birthDate\": \"2002-05-25\",\n\t\"hostel\": 1,\n\t\"avatarurl\": \"https://somepage.com/avatar.png\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "bbbff4e8-c1b0-46d9-a717-067a8563c637",
+            "colId": "11917654-c06a-4656-bdb0-c08052b79933",
+            "containerId": "",
+            "name": "Delete",
+            "url": "http://127.0.0.1:8000/api/competitor/10",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2024-02-16T12:01:31.742Z",
+            "modified": "2024-02-16T12:01:52.984Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
